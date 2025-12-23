@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Проверка аргументов
 if [ $# -ne 2 ]; then
   echo "Использование: $0 /path/to/logs N"
   echo "Где N — количество дней"
@@ -10,7 +9,6 @@ fi
 LOG_DIR=$1
 DAYS=$2
 
-# Поиск файлов
 FILES=$(find "$LOG_DIR" -type f -name "*.log" -mtime +$DAYS)
 
 if [ -z "$FILES" ]; then
